@@ -67,8 +67,7 @@ class Learner:
                     time_start = time.time()
                     self.model.train()
                     train_loss = 0
-                    for j, sample in enumerate(train_dl):
-                        x, y = sample[0], sample[1]   
+                    for j, (x, y) in enumerate(train_dl):
                         self.optimizer.zero_grad()
                         loss = self.model.batch_loss(x, y)
                         loss.backward()
