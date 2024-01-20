@@ -68,7 +68,7 @@ class Learner:
                     self.model.train()
                     train_loss = 0
                     for j, sample in enumerate(train_dl):
-                        x, y = sample.data, sample.target
+                        (x, y) = sample
                         self.optimizer.zero_grad()
                         loss = self.model.batch_loss(x, y)
                         loss.backward()
