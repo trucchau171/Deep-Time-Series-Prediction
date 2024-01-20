@@ -68,6 +68,7 @@ class Learner:
                     self.model.train()
                     train_loss = 0
                     for j, sample in enumerate(train_dl):
+                        print(type(sample))
                         print(sample)
                         x, y, w= sample 
                         self.optimizer.zero_grad()
